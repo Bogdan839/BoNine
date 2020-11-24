@@ -70,6 +70,7 @@ hr {
     position: fixed;
     top: 0;
     right: 0;
+    padding: 15px 0;
 
     box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
 
@@ -729,40 +730,6 @@ hr {
     padding: 0 110px;
     position: relative;
 }
-
-.reviews__btn {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-
-    transform: translateY(-50%);
-
-    font-size: 0;
-    color: transparent;
-}
-
-.reviews__btn::after {
-    content: '';
-
-    display: block;
-    width: 16px;
-    height: 16px;
-
-    border-top: 1px solid #cccc;
-    border-left: 1px solid #cccc;
-}
-
-
-.reviews__btn--prev {
-    left: 0;
-    transform: rotate(-45deg);
-}
-
-.reviews__btn--next {
-    right: 0;
-    transform: rotate(135deg);
-}
-
 
 .reviews__item {
     padding-left: 235px;
@@ -1479,22 +1446,31 @@ hr {
     }
     .nav {
         display: none;
+        
+        text-align: center;
         width: 100%;
-
         position: absolute;
         top: 100%;
         left: 0;
-        flex-direction: column;
-        align-items: center;
-
         background-color: #eb8b8d;
+    }
 
+    .nav.active {
+        display: block;
     }
 
     .nav__link {
         display: block;  
         margin: 20px 0;
         padding: 5px 20px; 
+    }
+
+    .nav__link::before {
+        width: 100%;
+        max-width: 70px;
+
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .nav-toggle {
